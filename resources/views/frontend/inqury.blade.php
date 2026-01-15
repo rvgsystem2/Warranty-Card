@@ -60,7 +60,7 @@
                 </script>
             @endif
 
-            <div class="space-y-6">
+            <div class="space-y-4">
                 <div class="text-center">
                     <h2 class="text-3xl font-bold text-black mb-2 uppercase tracking-wider">Submit an Inquiry</h2>
                     <p class="text-gray-500 text-opacity-80">We'll get back to you within 24 hours</p>

@@ -117,7 +117,7 @@
     </script>
 </div> --}}
 
-<div class="bg-graient-to-br from-blue-50 to-indigo-100d min-h-full flex flex-col items-center justify-center p-6">
+<div class="bg-gradient-to-br from-white to-gray-100 min-h-full flex flex-col items-center justify-center p-6">
   <div class="text-center mb-12">
             <h1 class="text-4xl font-bold text-gray-800 mb-4">Trusted by Industry Leaders</h1>
             <p class="text-gray-600 max-w-2xl mx-auto">Our partners include some of the most innovative companies in the industry.</p>

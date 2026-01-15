@@ -15,7 +15,7 @@
 </div>
 
 <!-- Enhanced Breadcrumb Navigation with Animation -->
-<nav class="bg-white border-b border-gray-200 text-black py-4 px-6 md:px-12 shadow-sm">
+<nav class="bg-white border-b  border-black text-black py-4 px-6 md:px-12 shadow-sm">
     <div class="container mx-auto">
         <ol class="flex items-center space-x-2 text-sm md:text-base">
             <li>
@@ -36,7 +36,7 @@
     </div>
 </nav>
 
-<section class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-white to-gray-100 py-16 border border-black">
+<section class="min-h-screen flex items-center justify-center p-4 bg-gradient-to-br from-white to-gray-100 py-16 ">
     <!-- Main Container with Enhanced Visual Appeal -->
     <div class=" w-full md:p-8 md:p-10
                  overflow-hidden max-w-4xl">
