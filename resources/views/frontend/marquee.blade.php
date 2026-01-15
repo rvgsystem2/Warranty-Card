@@ -1,4 +1,4 @@
-
+{{--
 <div class="bg-graient-to-br from-blue-50 to-indigo-100d min-h-full flex flex-col items-center justify-center p-6">
     <div class="max-w-6xl w-full">
         <div class="text-center mb-12">
@@ -15,41 +15,47 @@
                             <img src="{{asset('assets/img/front/SPINE CRAFT LOGO2.png')}}" alt="">
                         </div>
                         {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Ergonomic Solutions</p> --}}
-                    </div>
+{{-- </div>
                     <div class="flex flex-col items-center group">
                         <div class="h-24 w-48  rounded-lg flex items-center justify-center  transition-all duration-300">
                            <img src="{{asset('assets/img/front/Royal Signature logo.2.png')}}" alt="">
                         </div>
                         {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Luxury Designs</p> --}}
-                    </div>
+{{-- </div>
                     <div class="flex flex-col items-center group">
                         <div class="h-24 w-48 rounded-lg flex items-center justify-center  transition-all duration-300">
                             <img src="{{asset('assets/img/front/wakefit logo 2.png')}}" alt="">
                         </div>
                         {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p> --}}
-                    </div>
+{{-- </div> --}}
 
-                </div>
+{{-- </div>  --}}
 
-                <!-- Duplicate set for seamless loop -->
-                <div class="flex gap-12 items-center px-6" aria-hidden="true">
+<!-- Duplicate set for seamless loop -->
+{{--  <div class="flex gap-12 items-center px-6" aria-hidden="true">
                     <div class="flex flex-col items-center group">
                         <div class="h-24 w-48 rounded-lg flex items-center justify-center  transition-all duration-300">
                             <img src="{{asset('assets/img/front/SPINE CRAFT LOGO2.png')}}" alt="">
                         </div>
-                        {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p> --}}
-                    </div>
+                        <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p> --}}
+{{--  </div>
                     <div class="flex flex-col items-center group">
                         <div class="h-24 w-48 rounded-lg flex items-center justify-center  transition-all duration-300">
                             <img src="{{asset('assets/img/front/Royal Signature logo.2.png')}}" alt="">
                         </div>
                         {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p> --}}
-                    </div>
+{{-- </div>
                     <div class="flex flex-col items-center group">
                         <div class="h-24 w-48 rounded-lg flex items-center justify-center  transition-all duration-300">
                             <img src="{{asset('assets/img/front/wakefit logo 2.png')}}" alt="">
                         </div>
                         {{-- <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p> --}}
+{{--  </div>
+                     <div class="flex flex-col items-center group">
+                        <div class="h-24 w-48 rounded-lg flex items-center justify-center  transition-all duration-300">
+                            <img src="{{asset('assets/img/GUPTA GADDA WEB FUTTER (1).png')}}" alt="">
+                        </div>
+                        <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p>
                     </div>
 
                 </div>
@@ -109,4 +115,18 @@
             });
         });
     </script>
+</div> --}}
+
+<div class="bg-graient-to-br from-blue-50 to-indigo-100d min-h-full flex flex-col items-center justify-center p-6">
+  <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-800 mb-4">Trusted by Industry Leaders</h1>
+            <p class="text-gray-600 max-w-2xl mx-auto">Our partners include some of the most innovative companies in the industry.</p>
+</div>
+
+<div class="flex flex-col items-center group">
+    <div class="h-50 w-68 rounded-lg flex items-center justify-center  transition-all duration-300">
+        <img src="{{ asset('assets/img/GUPTA GADDA WEB FUTTER (1).png') }}" alt="">
+    </div>
+    <p class="text-gray-600 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Sleep Solutions</p>
+</div>
 </div>
