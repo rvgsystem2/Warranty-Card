@@ -31,7 +31,8 @@ Route::get('/warentycard/index',[WarentyCardController::class,'index'])->name('w
 Route::post('/warentycard/store',[WarentyCardController::class,'store'])->name('warentycard.store');
 Route::get('/warentycard/delete/{id}',[WarentyCardController::class,'delete'])->name('warentycard.delete');
 Route::get('/warentycard/show/{id}',[WarentyCardController::class,'show'])->name('warentycard.show');
-
+Route::post('/admin/warranty/{id}/approve', [WarentyCardController::class, 'approve'])->name('admin.warranty.approve');
+Route::post('/admin/warranty/{id}/reject', [WarentyCardController::class, 'reject'])->name('admin.warranty.reject');
 
 //-------------------  COMPLAIN CONTROLLER ------------------//
 Route::get('/complain/index',[ComplainController::class,'index'])->name('complain.index');

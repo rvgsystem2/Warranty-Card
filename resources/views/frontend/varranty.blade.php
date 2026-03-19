@@ -79,7 +79,7 @@
                     </p>
                 </div>
 
-                <!-- Registration Form -->
+               
                 <form action="{{ route('warentycard.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 
@@ -180,6 +180,25 @@
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
                         </div>
+
+                        <!-- Upload Invoice / Warranty Proof -->
+<div>
+    <label for="document" class="block text-black font-medium mb-1">
+        Upload Invoice / Product Image / PDF
+    </label>
+    <input type="file" id="document" name="document" accept=".jpg,.jpeg,.png,.pdf"
+        class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black border border-black
+               focus:outline-none focus:ring-2 focus:ring-gray-300 placeholder-black placeholder-opacity-50 transition-all">
+
+    <p class="mt-1 text-xs text-gray-700">
+        Allowed: JPG, JPEG, PNG, PDF (Max 5MB)
+    </p>
+
+    @error('document')
+        <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
+    @enderror
+</div>
+
                     </div>
 
                     <!-- Terms & Conditions -->
