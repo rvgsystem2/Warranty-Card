@@ -50,7 +50,7 @@ class ComplainController extends Controller
         ]);
 
         if($complainData){
-            Mail::to('vishalsharmagajrahi@gmail.com')->send(new AdminComplainMail($complainData));
+            Mail::to('gaurav6844gupta@gmail.com')->send(new AdminComplainMail($complainData));
             Mail::to($request->email)->send(new UserComplainMail($complainData));
         }
         return redirect()->back()->with('success','Your complaint has been successfully submitted....!');

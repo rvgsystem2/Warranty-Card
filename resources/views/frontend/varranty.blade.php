@@ -1,14 +1,15 @@
 @extends('components.main', ['title' => 'warrenty'])
 @section('content')
+
     <!-- Hero Banner Section with Parallax Effect -->
     <div
         class="relative w-full h-[24vh] md:h-[56vh]
       bg-[url('/assets/img/front/bg-img.jpg')] bg-no-repeat bg-cover bg-center
   flex items-center justify-center overflow-hidden transition-all duration-700">
-        <div class="absolute
-         inset-0 bg-gradient-to-b from-black/30 to-black/40 flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/40 flex items-center justify-center">
             <div class="text-center transform transition-all duration-500 ease-in-out">
-                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider mb-2">Warranty
+                <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider mb-2">
+                    Warranty
                 </h1>
                 <div class="h-1 w-24 md:w-32 bg-gradient-to-r from-gray-500 to-white mx-auto rounded-full"></div>
             </div>
@@ -20,7 +21,7 @@
         <div class="container mx-auto">
             <ol class="flex items-center space-x-2 text-sm md:text-base">
                 <li>
-                    <a href="#" class="text-black hover:text-black transition-colors duration-300 flex items-center">
+                    <a href="{{ url('/') }}" class="text-black hover:text-black transition-colors duration-300 flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -40,42 +41,52 @@
         </div>
     </nav>
 
-
     <section class="bg-white min-h-full flex items-center justify-center p-4 sm:p-6 mt-12 ">
-        <div class="max-w-6xl w-full bg-gray-200  backdrop-blur-md shadow-xl rounded-2xl p-6 sm:p-8 border border-black">
-
-            <!-- Left Section (Form) -->
+        <div class="max-w-6xl w-full bg-gray-200 backdrop-blur-md shadow-xl rounded-2xl p-6 sm:p-8 border border-black">
 
             @if (session('success'))
                 <script>
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: "{{ session('success') }}",
-                        timer: 5000,
-                        showConfirmButton: false
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Success!',
+                            text: "{{ session('success') }}",
+                            confirmButtonColor: '#1f2937'
+                        });
                     });
                 </script>
             @endif
+
+            @if (session('error'))
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error!',
+                            text: "{{ session('error') }}",
+                            confirmButtonColor: '#dc2626'
+                        });
+                    });
+                </script>
+            @endif
+
             <div class="space-y-6">
                 <!-- Form Header -->
                 <div class="text-center">
                     <h1 class="text-2xl sm:text-3xl font-bold text-black mb-2">Warranty Registration</h1>
-                    <p class="text-black text-opacity-80 text-sm sm:text-base">Register your product to activate your
-                        warranty coverage</p>
+                    <p class="text-black text-opacity-80 text-sm sm:text-base">
+                        Register your product to activate your warranty coverage
+                    </p>
                 </div>
 
                 <!-- Registration Form -->
-                <form action="{{ route('warentycard.store') }}" method="POST" enctype="multipart/form-data"
-                    class="space-y-4">
+                <form action="{{ route('warentycard.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
                     @csrf
 
                     <!-- Personal Information Section -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Full Name -->
                         <div>
-                            <label for="name" class="block text-black font-medium mb-1">Full Name
-                            </label>
+                            <label for="name" class="block text-black font-medium mb-1">Full Name</label>
                             <input type="text" id="name" name="name" value="{{ old('name') }}"
                                 class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black border border-black
                                       focus:outline-none focus:ring-2 focus:ring-gray-300 placeholder-black placeholder-opacity-50 transition-all"
@@ -85,10 +96,8 @@
                             @enderror
                         </div>
 
-                        <!-- Email -->
                         <div>
-                            <label for="email" class="block text-black font-medium mb-1">Email Address
-                            </label>
+                            <label for="email" class="block text-black font-medium mb-1">Email Address</label>
                             <input type="email" id="email" name="email" value="{{ old('email') }}"
                                 class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black border border-black
                                       focus:outline-none focus:ring-2 focus:ring-gray-300 placeholder-black placeholder-opacity-50 transition-all"
@@ -101,7 +110,6 @@
 
                     <!-- Contact Information Section -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Phone -->
                         <div>
                             <label for="phone" class="block text-black font-medium mb-1">Phone Number</label>
                             <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
@@ -113,7 +121,6 @@
                             @enderror
                         </div>
 
-                        <!-- City -->
                         <div>
                             <label for="city" class="block text-black font-medium mb-1">City</label>
                             <input type="text" id="city" name="city" value="{{ old('city') }}"
@@ -128,7 +135,6 @@
 
                     <!-- Product Information Section -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- State -->
                         <div>
                             <label for="state" class="block text-black font-medium mb-1">State/Province</label>
                             <input type="text" id="state" name="state" value="{{ old('state') }}"
@@ -140,7 +146,6 @@
                             @enderror
                         </div>
 
-                        <!-- Serial Number -->
                         <div>
                             <label for="productsln" class="block text-black font-medium mb-1">Product Serial Number</label>
                             <input type="text" id="productsln" name="productsln" value="{{ old('productsln') }}"
@@ -155,10 +160,9 @@
 
                     <!-- Purchase Information Section -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <!-- Date of Purchase -->
                         <div>
                             <label for="purchase_date" class="block text-black font-medium mb-1">Purchase Date</label>
-                            <input type="date" id="purchase_date" name="purchase_date"
+                            <input type="date" id="purchase_date" name="purchase_date" value="{{ old('purchase_date') }}"
                                 class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black border border-black
                                       focus:outline-none focus:ring-2 focus:ring-gray-300 placeholder-black placeholder-opacity-50 transition-all">
                             @error('purchase_date')
@@ -166,14 +170,12 @@
                             @enderror
                         </div>
 
-                        <!-- Purchase From -->
                         <div>
                             <label for="purchaseform" class="block text-black font-medium mb-1">Purchased From</label>
-                            <input type="text" id="purchaseform" name="purchaseform"
-                                value="{{ old('purchaseform') }}"
+                            <input type="text" id="purchaseform" name="purchaseform" value="{{ old('purchaseform') }}"
                                 class="w-full px-4 py-3 rounded-lg bg-gray-100 text-black border border-black
                                       focus:outline-none focus:ring-2 focus:ring-gray-300 placeholder-black placeholder-opacity-50 transition-all"
-                                placeholder="Purchase Form">
+                                placeholder="Purchase From">
                             @error('purchaseform')
                                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                             @enderror
@@ -184,13 +186,15 @@
                     <div class="pt-2">
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
-                                <input id="terms" name="terms" type="checkbox"
-                                    class="w-4 h-4 rounded bg-white bg-opacity-30 border border-white border-opacity-50 focus:ring-teal-300 focus:ring-2">
+                                <input id="terms" name="terms" type="checkbox" value="1"
+                                    {{ old('terms') ? 'checked' : '' }}
+                                    class="w-4 h-4 rounded bg-white border border-black focus:ring-gray-400 focus:ring-2">
                             </div>
                             <div class="ml-3 text-sm">
-                                <label for="terms" class="font-medium text-black text-opacity-90">I agree to the <a
-                                        href="#" class="text-gray-800 hover:underline">terms and
-                                        conditions</a></label>
+                                <label for="terms" class="font-medium text-black text-opacity-90">
+                                    I agree to the
+                                    <a href="#" class="text-gray-800 hover:underline">terms and conditions</a>
+                                </label>
                                 @error('terms')
                                     <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
                                 @enderror
@@ -212,12 +216,8 @@
                     </button>
                 </form>
             </div>
-
-
         </div>
     </section>
 
     @include('frontend.marquee')
-
-
 @endsection

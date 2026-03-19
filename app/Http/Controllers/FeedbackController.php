@@ -30,7 +30,7 @@ public function store(FeedbackRequest $request){
    $feedbackData =  Feedback::create($request->all());
    
   if($feedbackData){
-      Mail::to('vishalsharmagajrahi@gmail.com')->send(new AdminFeedbackMail($feedbackData));
+      Mail::to('gaurav6844gupta@gmail.com')->send(new AdminFeedbackMail($feedbackData));
       Mail::to($request->email)->send(new UserFeedbackMail($feedbackData));
   }
 

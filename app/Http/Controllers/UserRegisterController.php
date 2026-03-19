@@ -33,7 +33,7 @@ class UserRegisterController extends Controller
      $userregisterData = UserRegister::create($request->all());
 
      if($userregisterData){
-        Mail::to('vishalsharmagajrahi@gmail.com')->send(new AdminUserRegisterMail($userregisterData));
+        Mail::to('gaurav6844gupta@gmail.com')->send(new AdminUserRegisterMail($userregisterData));
         Mail::to($request->email)->send(new UserRegisterMail($userregisterData));
      }
 

@@ -12,14 +12,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\CustomMiddleware;
 
 //------------------  ADMIN CONTROLLER ----------------- //
-Route::get('/dashboard', [AdminController::class, 'dashbord'])->name('admin.dashbord')->middleware(CustomMiddleware::class);
+Route::get('/dashboard', [AdminController::class, 'dashbord'])->name('admin.dashbord');
 
 //------------------ USER CONTROLLER ------------------ //
 Route::get('login/',[UserController::class , 'login'])->name('login');
 Route::post('/login/store',[UserController::class , 'store'])->name('login.store');
 Route::get('/logout',[UserController::class , 'logout'])->name('logout');
 
-Route::group(['middleware'=>CustomMiddleware::class],function(){
+
 //--------------    CHANGE PASSWORD CONTROLLER ---------------------//
 Route::get('changepasword/',[ChangePasswordController::class, 'changepassword'])->name('changepassword');
 Route::post('changepasword/store',[ChangePasswordController::class, 'store'])->name('changepassword.store');
@@ -50,7 +50,7 @@ Route::get('/feedback/index',[FeedbackController::class,'index'])->name('feedbac
 Route::post('/feedback/store',[FeedbackController::class,'store'])->name('feedback.store');
 Route::get('/feedback/delete/{id}',[FeedbackController::class,'delete'])->name('feedback.delete');
 
-});
+
 // --------------------FRONTEND -- CONTROLLER----------------//
 
 // Route::get('/', [HomeController::class, 'index'])->name('frontend.index');
